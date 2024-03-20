@@ -19,17 +19,21 @@ final class AddingTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
     }
     
     @IBAction func notificationSwitch(_ sender: UISwitch) {
     }
     
     @IBAction func deleteInformation() {
+        // + алерт "Вы уверены, что хотите удалить внесенную информацию?"
+   
     }
     
     @IBAction func saveInformation() {
     }
     
 
+    
    
 }

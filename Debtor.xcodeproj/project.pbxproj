@@ -15,6 +15,10 @@
 		16970E852BA2DF1E0014FC81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16970E832BA2DF1E0014FC81 /* LaunchScreen.storyboard */; };
 		16970E912BA46B7B0014FC81 /* AddingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970E902BA46B7B0014FC81 /* AddingTableViewController.swift */; };
 		16970E932BA8197F0014FC81 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970E922BA8197F0014FC81 /* InformationViewController.swift */; };
+		16A641E32BA8441E00CD19EE /* Debtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A641E22BA8441E00CD19EE /* Debtor.swift */; };
+		16A641E62BA97D1500CD19EE /* UIViewController + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A641E52BA97D1500CD19EE /* UIViewController + Alert.swift */; };
+		16A641EA2BAAD80900CD19EE /* AboutDebtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A641E92BAAD80900CD19EE /* AboutDebtCell.swift */; };
+		16A641EC2BAAEB5F00CD19EE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A641EB2BAAEB5F00CD19EE /* Date.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +32,10 @@
 		16970E862BA2DF1E0014FC81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		16970E902BA46B7B0014FC81 /* AddingTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingTableViewController.swift; sourceTree = "<group>"; };
 		16970E922BA8197F0014FC81 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		16A641E22BA8441E00CD19EE /* Debtor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debtor.swift; sourceTree = "<group>"; };
+		16A641E52BA97D1500CD19EE /* UIViewController + Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alert.swift"; sourceTree = "<group>"; };
+		16A641E92BAAD80900CD19EE /* AboutDebtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutDebtCell.swift; sourceTree = "<group>"; };
+		16A641EB2BAAEB5F00CD19EE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,9 @@
 		16970E772BA2DF1C0014FC81 /* Debtor */ = {
 			isa = PBXGroup;
 			children = (
+				16A641E82BAAD7D800CD19EE /* Views */,
+				16A641E72BAAD05F00CD19EE /* Extensions */,
+				16A641E42BA97CE000CD19EE /* Services */,
 				16970E8D2BA2DF3A0014FC81 /* ViewControllers */,
 				16970E8F2BA2E0650014FC81 /* Models */,
 				16970E8E2BA2DF900014FC81 /* StoryBoards */,
@@ -101,8 +112,33 @@
 		16970E8F2BA2E0650014FC81 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				16A641E22BA8441E00CD19EE /* Debtor.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		16A641E42BA97CE000CD19EE /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		16A641E72BAAD05F00CD19EE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				16A641E52BA97D1500CD19EE /* UIViewController + Alert.swift */,
+				16A641EB2BAAEB5F00CD19EE /* Date.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		16A641E82BAAD7D800CD19EE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				16A641E92BAAD80900CD19EE /* AboutDebtCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -176,10 +212,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A641EA2BAAD80900CD19EE /* AboutDebtCell.swift in Sources */,
 				16970E912BA46B7B0014FC81 /* AddingTableViewController.swift in Sources */,
+				16A641E62BA97D1500CD19EE /* UIViewController + Alert.swift in Sources */,
+				16A641E32BA8441E00CD19EE /* Debtor.swift in Sources */,
 				16970E7D2BA2DF1C0014FC81 /* MainViewController.swift in Sources */,
 				16970E792BA2DF1C0014FC81 /* AppDelegate.swift in Sources */,
 				16970E7B2BA2DF1C0014FC81 /* SceneDelegate.swift in Sources */,
+				16A641EC2BAAEB5F00CD19EE /* Date.swift in Sources */,
 				16970E932BA8197F0014FC81 /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
