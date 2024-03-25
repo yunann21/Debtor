@@ -178,6 +178,7 @@
                                         <buttonConfiguration key="configuration" style="plain" title="Статистика по ФИО"/>
                                         <connections>
                                             <action selector="showStatistics" destination="cHM-KN-J8J" eventType="touchUpInside" id="7yC-Xy-g7J"/>
+                                            <segue destination="ohA-SC-HPc" kind="show" id="YTo-8L-9up"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -198,6 +199,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Jib-ll-0h1">
+                        <barButtonItem key="backBarButtonItem" title="Назад" id="Wi9-hH-1Be"/>
                         <barButtonItem key="rightBarButtonItem" title="Item" image="rectangle.and.pencil.and.ellipsis" catalog="system" id="0oq-W2-0UG">
                             <connections>
                                 <segue destination="EXf-xH-g1v" kind="show" id="JWc-qM-bcb"/>
@@ -211,7 +213,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tsT-On-9eA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1147" y="599"/>
+            <point key="canvasLocation" x="1444" y="640"/>
         </scene>
         <!--Adding Table View Controller-->
         <scene sceneID="nzh-8p-rWI">
@@ -237,7 +239,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="AnG-8e-gYe">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Обязательно для заполнения" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="AnG-8e-gYe">
                                                     <rect key="frame" x="260" y="5" width="150" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="BFO-He-ITg"/>
@@ -269,7 +271,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="XEM-UQ-aNM">
+                                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Обязательно для заполнения" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="XEM-UQ-aNM">
                                                     <rect key="frame" x="260" y="5" width="150" height="34"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="34" id="CyW-fd-RMy"/>
@@ -491,10 +493,10 @@
                     <connections>
                         <outlet property="amountTextField" destination="XEM-UQ-aNM" id="2dm-8z-mY9"/>
                         <outlet property="commentTextField" destination="9NV-Fb-aj8" id="cZV-Ce-JwD"/>
-                        <outlet property="finalData" destination="Do0-Qc-0pb" id="JF7-yJ-V3w"/>
+                        <outlet property="finalDate" destination="Do0-Qc-0pb" id="JF7-yJ-V3w"/>
                         <outlet property="nameTextField" destination="AnG-8e-gYe" id="d0W-Pz-9kB"/>
                         <outlet property="numberTextField" destination="Ld5-HQ-7El" id="vme-Pj-cry"/>
-                        <outlet property="startData" destination="LJg-Sk-sIM" id="Xib-Bl-Bzi"/>
+                        <outlet property="startDate" destination="LJg-Sk-sIM" id="Xib-Bl-Bzi"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="le3-ZT-UrX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -576,6 +578,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="YTo-8L-9up"/>
         <segue reference="JWc-qM-bcb"/>
     </inferredMetricsTieBreakers>
     <resources>

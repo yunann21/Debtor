@@ -13,7 +13,7 @@ struct Debtor {
 }
 
 struct Debt {
-    var amountOfDebt: Double
+    var amountOfDebt: Int
     var startDate: Date
     var finishDate: Date
     var comment: String = ""

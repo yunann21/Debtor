@@ -23,6 +23,8 @@ final class InformationViewController: UIViewController {
     }
     
     @IBAction func deleteButton() {
+        //+ alert
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func showStatistics() {
