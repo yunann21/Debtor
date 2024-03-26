@@ -19,4 +19,14 @@ extension UIViewController {
         alert.addAction(okAction)
             self.present(alert, animated: true)
     }
+    
+        /* 
+     func registerForTraitChanges(
+        _ traits: [UITrait],
+        action: Selector
+    ) -> UITraitChangeRegistration {
+        return UITraitChangeRegistration()
+    }
+         */
+    
 }

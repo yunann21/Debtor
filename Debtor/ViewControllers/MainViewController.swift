@@ -8,7 +8,7 @@
 import UIKit
 
 final class MainViewController: UIViewController {
-
+    
     @IBOutlet var directionLabel: UILabel!
     @IBOutlet var tableView: UITableView!
     private var debts: [Debt] = []
@@ -17,8 +17,18 @@ final class MainViewController: UIViewController {
         super.viewDidLoad()
         directionLabel.textColor = .green
         debts = Debt.generateDebts()
-    
+        
     }
+    override func viewWillAppear(_ animated: Bool) {
+        tabBarController?.tabBar.layer.zPosition = 0
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let informationVC = segue.destination as? InformationViewController
+        let index = tableView.indexPathForSelectedRow?.row ?? 0
+        informationVC?.debt = debts[index]
+    }
+    
     
     @IBAction func chooseDirection(_ sender: UISwitch) {
         if sender.isOn {
@@ -29,13 +39,8 @@ final class MainViewController: UIViewController {
             directionLabel.textColor = .red
         }
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let informationVC = segue.destination as? InformationViewController
-        let index = tableView.indexPathForSelectedRow?.row ?? 0
-        informationVC?.personInformation = debts[index]
-    }
 }
+    
 
 
 

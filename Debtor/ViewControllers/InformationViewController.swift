@@ -12,15 +12,19 @@ final class InformationViewController: UIViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var numberLabel: UILabel!
     
-    var personInformation: Debt!
+    var debt: Debt!
     private let parameters = Parameters.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        nameLabel.text = personInformation.debtor.fullName
-        numberLabel.text = personInformation.debtor.number.description
-        
+        nameLabel.text = debt.debtor.fullName
+        numberLabel.text = debt.debtor.number.description
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.tabBarController?.tabBar.layer.zPosition = -1
+    }
+    
     
     @IBAction func deleteButton() {
         //+ alert
@@ -30,6 +34,10 @@ final class InformationViewController: UIViewController {
     @IBAction func showStatistics() {
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let addingVC = segue.destination as? AddingTableViewController
+        addingVC?.debt = debt
+    }
 }
 
 extension InformationViewController: UITableViewDataSource {
@@ -44,13 +52,13 @@ extension InformationViewController: UITableViewDataSource {
         debtCell.parameterLabel.text = parametr.rawValue
         debtCell.valueLabel.text = switch parametr {
         case .amount:
-            personInformation.amountOfDebt.description
+            debt.amountOfDebt.description
         case .startDate:
-            personInformation.startDate.toString()
+            debt.startDate.toString()
         case .finishDate:
-            personInformation.finishDate.toString()
+            debt.finishDate.toString()
         case .comment:
-            personInformation.comment
+            debt.comment
         }
         return debtCell
     }
@@ -58,4 +66,5 @@ extension InformationViewController: UITableViewDataSource {
 
     
 }
+
 

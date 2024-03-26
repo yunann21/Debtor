@@ -19,6 +19,7 @@
 		16A641E62BA97D1500CD19EE /* UIViewController + Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A641E52BA97D1500CD19EE /* UIViewController + Alert.swift */; };
 		16A641EA2BAAD80900CD19EE /* AboutDebtCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A641E92BAAD80900CD19EE /* AboutDebtCell.swift */; };
 		16A641EC2BAAEB5F00CD19EE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A641EB2BAAEB5F00CD19EE /* Date.swift */; };
+		16A641EE2BB149E000CD19EE /* AlertControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A641ED2BB149E000CD19EE /* AlertControllerBuilder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		16A641E52BA97D1500CD19EE /* UIViewController + Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Alert.swift"; sourceTree = "<group>"; };
 		16A641E92BAAD80900CD19EE /* AboutDebtCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutDebtCell.swift; sourceTree = "<group>"; };
 		16A641EB2BAAEB5F00CD19EE /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
+		16A641ED2BB149E000CD19EE /* AlertControllerBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertControllerBuilder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		16970E772BA2DF1C0014FC81 /* Debtor */ = {
 			isa = PBXGroup;
 			children = (
+				16A641EF2BB149E500CD19EE /* Factories */,
 				16A641E82BAAD7D800CD19EE /* Views */,
 				16A641E72BAAD05F00CD19EE /* Extensions */,
 				16A641E42BA97CE000CD19EE /* Services */,
@@ -141,6 +144,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		16A641EF2BB149E500CD19EE /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				16A641ED2BB149E000CD19EE /* AlertControllerBuilder.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -212,6 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16A641EE2BB149E000CD19EE /* AlertControllerBuilder.swift in Sources */,
 				16A641EA2BAAD80900CD19EE /* AboutDebtCell.swift in Sources */,
 				16970E912BA46B7B0014FC81 /* AddingTableViewController.swift in Sources */,
 				16A641E62BA97D1500CD19EE /* UIViewController + Alert.swift in Sources */,
