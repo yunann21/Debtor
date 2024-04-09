@@ -41,11 +41,7 @@ final class MainViewController: UIViewController {
     }
 }
     
-
-
-
-
-
+// MARK: - UITableViewDataSource
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return debts.count
@@ -59,7 +55,11 @@ extension MainViewController: UITableViewDataSource {
         return cell
     }
     
-
-    
-    
 }
+
+// MARK: - UITableViewDelegate
+extension MainViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+} 

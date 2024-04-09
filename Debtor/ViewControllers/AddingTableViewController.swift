@@ -33,7 +33,6 @@ final class AddingTableViewController: UITableViewController {
         self.tabBarController?.tabBar.layer.zPosition = -1
     }
     
-    
     @IBAction func notificationSwitch(_ sender: UISwitch) {
     }
     
@@ -51,8 +50,8 @@ final class AddingTableViewController: UITableViewController {
             title: "Да",
             style: .destructive
         ) { [unowned self] in
-            print("Удаляем долг")
-#warning("To do: delete debt")
+
+            #warning("To do: delete debt")
             navigationController?.popToRootViewController(animated: true)
         }
         alertBuilder.addAction(
@@ -66,31 +65,47 @@ final class AddingTableViewController: UITableViewController {
     @IBAction func saveInformation() {
         guard let text = nameTextField.text ,
               !text.isEmpty else {
+            nameTextField.shake()
             showAlert(withTitle: "Ошибка!", andMessage: "Не указаны ФИО")
             return
         }
         
-#warning ("убрать провреку на пустоту и символы после того, как сделаем привязку к контактам")
+        #warning ("убрать провреку на пустоту и символы после того, как сделаем привязку к контактам")
+       
         if let text = nameTextField.text, text.contains(where: { $0.isNumber || $0.isPunctuation }) {
-            showAlert(
-                withTitle: "Ошибка",
-                andMessage: "ФИО не может содержать цифры или знаки препинания",
-                completion: {self.nameTextField.text = ""}
+            nameTextField.shake()
+            var alertBuilder = AlertControllerBuilder(
+                title: "Ошибка",
+                message: "ФИО не может содержать цифры или знаки препинания"
             )
+            alertBuilder.addAction(
+                title: "ОК",
+                style: .cancel) { [unowned self] in
+                    nameTextField.text = ""
+                }
+            present(alertBuilder.build(), animated: true)
             return
         }
+        
         if amountTextField.text!.isEmpty {
+            amountTextField.shake()
             showAlert(withTitle: "Ошибка", andMessage: "Не указна сумма долга")
             return
         }
+        
         if startDate.date > finalDate.date {
-            showAlert(
-                withTitle: "Ошибка",
-                andMessage: "Дата окончания не может быть меньше стартовой даты",
-                completion: {
-                    self.startDate.date = self.finalDate.date
-                }
+            startDate.shake()
+            finalDate.shake()
+            var alertBuilder = AlertControllerBuilder(
+                title: "Ошибка",
+                message: "Дата окончания не может быть меньше стартовой даты"
             )
+            alertBuilder.addAction(
+                title: "ОК",
+                style: .destructive) { [unowned self] in
+                    startDate.date = finalDate.date
+                }
+            present(alertBuilder.build(), animated: true)
         }
     }
  
@@ -115,5 +130,4 @@ final class AddingTableViewController: UITableViewController {
         finalDate.date = debt.finishDate
     }
 }
-
 

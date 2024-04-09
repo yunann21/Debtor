@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		167A559C2BC515E5008251BE /* UIView + Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A559B2BC515E5008251BE /* UIView + Animation.swift */; };
 		16970E792BA2DF1C0014FC81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970E782BA2DF1C0014FC81 /* AppDelegate.swift */; };
 		16970E7B2BA2DF1C0014FC81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970E7A2BA2DF1C0014FC81 /* SceneDelegate.swift */; };
 		16970E7D2BA2DF1C0014FC81 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970E7C2BA2DF1C0014FC81 /* MainViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		167A559B2BC515E5008251BE /* UIView + Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Animation.swift"; sourceTree = "<group>"; };
 		16970E752BA2DF1C0014FC81 /* Debtor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debtor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16970E782BA2DF1C0014FC81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16970E7A2BA2DF1C0014FC81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				16A641E52BA97D1500CD19EE /* UIViewController + Alert.swift */,
 				16A641EB2BAAEB5F00CD19EE /* Date.swift */,
+				167A559B2BC515E5008251BE /* UIView + Animation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				16A641EE2BB149E000CD19EE /* AlertControllerBuilder.swift in Sources */,
+				167A559C2BC515E5008251BE /* UIView + Animation.swift in Sources */,
 				16A641EA2BAAD80900CD19EE /* AboutDebtCell.swift in Sources */,
 				16970E912BA46B7B0014FC81 /* AddingTableViewController.swift in Sources */,
 				16A641E62BA97D1500CD19EE /* UIViewController + Alert.swift in Sources */,
