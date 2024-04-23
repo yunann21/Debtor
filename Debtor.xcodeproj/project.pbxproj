@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		167A559C2BC515E5008251BE /* UIView + Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A559B2BC515E5008251BE /* UIView + Animation.swift */; };
+		167A55D62BD7ADBC008251BE /* InfoDebtor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 167A55D42BD7ADBC008251BE /* InfoDebtor.xcdatamodeld */; };
+		167A55D82BD7AE68008251BE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A55D72BD7AE68008251BE /* StorageManager.swift */; };
 		16970E792BA2DF1C0014FC81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970E782BA2DF1C0014FC81 /* AppDelegate.swift */; };
 		16970E7B2BA2DF1C0014FC81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970E7A2BA2DF1C0014FC81 /* SceneDelegate.swift */; };
 		16970E7D2BA2DF1C0014FC81 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970E7C2BA2DF1C0014FC81 /* MainViewController.swift */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		167A559B2BC515E5008251BE /* UIView + Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Animation.swift"; sourceTree = "<group>"; };
+		167A55D52BD7ADBC008251BE /* StorageManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StorageManager.xcdatamodel; sourceTree = "<group>"; };
+		167A55D72BD7AE68008251BE /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		16970E752BA2DF1C0014FC81 /* Debtor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debtor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16970E782BA2DF1C0014FC81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		16970E7A2BA2DF1C0014FC81 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,7 @@
 				16970E782BA2DF1C0014FC81 /* AppDelegate.swift */,
 				16970E7A2BA2DF1C0014FC81 /* SceneDelegate.swift */,
 				16970E862BA2DF1E0014FC81 /* Info.plist */,
+				167A55D42BD7ADBC008251BE /* InfoDebtor.xcdatamodeld */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 		16A641E42BA97CE000CD19EE /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				167A55D72BD7AE68008251BE /* StorageManager.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -229,6 +235,7 @@
 				16A641EE2BB149E000CD19EE /* AlertControllerBuilder.swift in Sources */,
 				167A559C2BC515E5008251BE /* UIView + Animation.swift in Sources */,
 				16A641EA2BAAD80900CD19EE /* AboutDebtCell.swift in Sources */,
+				167A55D62BD7ADBC008251BE /* InfoDebtor.xcdatamodeld in Sources */,
 				16970E912BA46B7B0014FC81 /* AddingTableViewController.swift in Sources */,
 				16A641E62BA97D1500CD19EE /* UIViewController + Alert.swift in Sources */,
 				16A641E32BA8441E00CD19EE /* Debtor.swift in Sources */,
@@ -237,6 +244,7 @@
 				16970E7B2BA2DF1C0014FC81 /* SceneDelegate.swift in Sources */,
 				16A641EC2BAAEB5F00CD19EE /* Date.swift in Sources */,
 				16970E932BA8197F0014FC81 /* InformationViewController.swift in Sources */,
+				167A55D82BD7AE68008251BE /* StorageManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +473,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		167A55D42BD7ADBC008251BE /* InfoDebtor.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				167A55D52BD7ADBC008251BE /* StorageManager.xcdatamodel */,
+			);
+			currentVersion = 167A55D52BD7ADBC008251BE /* StorageManager.xcdatamodel */;
+			path = InfoDebtor.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 16970E6D2BA2DF1C0014FC81 /* Project object */;
 }

@@ -19,7 +19,8 @@ final class AddingTableViewController: UITableViewController {
     
     @IBOutlet var deleteButton: UIButton!
     
-    var debt: Debt?
+    var debt: DebtInfo?
+    weak var delegate: AddingTableViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,7 +75,7 @@ final class AddingTableViewController: UITableViewController {
        
         if let text = nameTextField.text, text.contains(where: { $0.isNumber || $0.isPunctuation }) {
             nameTextField.shake()
-            var alertBuilder = AlertControllerBuilder(
+            let alertBuilder = AlertControllerBuilder(
                 title: "Ошибка",
                 message: "ФИО не может содержать цифры или знаки препинания"
             )
@@ -96,9 +97,9 @@ final class AddingTableViewController: UITableViewController {
         if startDate.date > finalDate.date {
             startDate.shake()
             finalDate.shake()
-            var alertBuilder = AlertControllerBuilder(
+            let alertBuilder = AlertControllerBuilder(
                 title: "Ошибка",
-                message: "Дата окончания не может быть меньше стартовой даты"
+                message: "Дата окончания не может быть раньше стартовой даты"
             )
             alertBuilder.addAction(
                 title: "ОК",
@@ -107,6 +108,13 @@ final class AddingTableViewController: UITableViewController {
                 }
             present(alertBuilder.build(), animated: true)
         }
+        #warning ("Дополнить информацию для сохранения")
+        let nameDebtor = DebtInfo(context: StorageManager.shared.persistentContainer.viewContext)
+        nameDebtor.name = nameTextField.text
+        StorageManager.shared.saveContext()
+        delegate?.reloadData()
+        
+        navigationController?.popViewController(animated: true)
     }
  
     private func setupUI() {
@@ -121,13 +129,13 @@ final class AddingTableViewController: UITableViewController {
         deleteButton.setTitle("Удалить", for: .normal)
         navigationItem.title = "Редактирование"
         
-        nameTextField.text = debt.debtor.fullName
-        amountTextField.text = debt.amountOfDebt.description
-        numberTextField.text = debt.debtor.number.description
-        commentTextField.text = debt.comment
-        
-        startDate.date = debt.startDate
-        finalDate.date = debt.finishDate
+//        nameTextField.text = debt.debtor.fullName
+//        amountTextField.text = debt.amountOfDebt.description
+//        numberTextField.text = debt.debtor.number.description
+//        commentTextField.text = debt.comment
+//        
+//        startDate.date = debt.startDate
+//        finalDate.date = debt.finishDate
     }
 }
 

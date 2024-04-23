@@ -7,16 +7,23 @@
 
 import UIKit
 
+protocol AddingTableViewControllerDelegate: AnyObject {
+    func reloadData()
+}
+
 final class MainViewController: UIViewController {
     
     @IBOutlet var directionLabel: UILabel!
     @IBOutlet var tableView: UITableView!
+    
     private var debts: [Debt] = []
+    private var debtors: [DebtInfo] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         directionLabel.textColor = .green
         debts = Debt.generateDebts()
+        fetchData()
         
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -24,9 +31,14 @@ final class MainViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let informationVC = segue.destination as? InformationViewController
-        let index = tableView.indexPathForSelectedRow?.row ?? 0
-        informationVC?.debt = debts[index]
+        if let informationVC = segue.destination as? InformationViewController {
+            let index = tableView.indexPathForSelectedRow?.row ?? 0
+            informationVC.debt = debtors[index]
+        } else if let addingVC = segue.destination as? AddingTableViewController {
+            addingVC.delegate = self
+        }
+        
+        
     }
     
     
@@ -39,19 +51,34 @@ final class MainViewController: UIViewController {
             directionLabel.textColor = .red
         }
     }
+    
+    private func fetchData() {
+        let fetchRequest = DebtInfo.fetchRequest()
+        do {
+            debtors = try StorageManager.shared.persistentContainer.viewContext.fetch(fetchRequest)
+        } catch {
+            print(error)
+        }
+    }
 }
     
 // MARK: - UITableViewDataSource
 extension MainViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return debts.count
+        return debtors.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "person", for: indexPath)
-        var config = cell.defaultContentConfiguration()
-        config.text = debts[indexPath.row].debtor.fullName
-        cell.contentConfiguration = config
+        let infoDebt = debtors[indexPath.row]
+        var content = cell.defaultContentConfiguration()
+        content.text = infoDebt.name
+        
+        //var config = cell.defaultContentConfiguration()
+        //config.text = debts[indexPath.row].debtor.fullName
+        //cell.contentConfiguration = config
+        
+        cell.contentConfiguration = content
         return cell
     }
     
@@ -63,3 +90,10 @@ extension MainViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
     }
 } 
+
+extension MainViewController: AddingTableViewControllerDelegate {
+    func reloadData() {
+        fetchData()
+        tableView.reloadData()
+    }
+}
