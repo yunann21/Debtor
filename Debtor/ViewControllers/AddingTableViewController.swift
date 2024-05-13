@@ -26,8 +26,7 @@ final class AddingTableViewController: UITableViewController {
         super.viewDidLoad()
         
         setupUI()
-        startDate.date = .now
-        finalDate.date = startDate.date
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +38,6 @@ final class AddingTableViewController: UITableViewController {
     
     @IBAction func deleteInformation() {
         guard let debt else {
-            
             navigationController?.popViewController(animated: true)
             return
         }
@@ -53,7 +51,11 @@ final class AddingTableViewController: UITableViewController {
         ) { [unowned self] in
 
             #warning("To do: delete debt")
+        
             navigationController?.popToRootViewController(animated: true)
+            StorageManager.shared.deleteDebt(debt: debt)
+            delegate?.reloadData()
+            
         }
         alertBuilder.addAction(
             title: "Нет",
@@ -71,8 +73,8 @@ final class AddingTableViewController: UITableViewController {
             return
         }
         
-        #warning ("убрать провреку на пустоту и символы после того, как сделаем привязку к контактам")
-       
+#warning ("убрать провреку на пустоту и символы после того, как сделаем привязку к контактам")
+        
         if let text = nameTextField.text, text.contains(where: { $0.isNumber || $0.isPunctuation }) {
             nameTextField.shake()
             let alertBuilder = AlertControllerBuilder(
@@ -108,14 +110,19 @@ final class AddingTableViewController: UITableViewController {
                 }
             present(alertBuilder.build(), animated: true)
         }
-        #warning ("Дополнить информацию для сохранения")
-        let nameDebtor = DebtInfo(context: StorageManager.shared.persistentContainer.viewContext)
-        nameDebtor.name = nameTextField.text
-        StorageManager.shared.saveContext()
+        if let debt {
+#warning ("добавить функцию обновления данных")
+        } else {
+            StorageManager.shared.createDebt(name: nameTextField.text ?? "", amount: Int(amountTextField.text ?? "") ?? 0, comment: commentTextField.text ?? "", finalDate: finalDate.date, number: Int(numberTextField.text ?? "") ?? 0, startDate: startDate.date)
+        }
+        
+        
         delegate?.reloadData()
         
-        navigationController?.popViewController(animated: true)
+        navigationController?.popToRootViewController(animated: true)
+        
     }
+    
  
     private func setupUI() {
         commentTextField.layer.borderColor = UIColor(named: "border")?.cgColor
@@ -124,18 +131,20 @@ final class AddingTableViewController: UITableViewController {
         guard let debt else {
             deleteButton.setTitle("Отмена", for: .normal)
             navigationItem.title = "Новый долг"
+            startDate.date = .now
+            finalDate.date = startDate.date
             return
         }
         deleteButton.setTitle("Удалить", for: .normal)
         navigationItem.title = "Редактирование"
         
-//        nameTextField.text = debt.debtor.fullName
-//        amountTextField.text = debt.amountOfDebt.description
-//        numberTextField.text = debt.debtor.number.description
-//        commentTextField.text = debt.comment
-//        
-//        startDate.date = debt.startDate
-//        finalDate.date = debt.finishDate
+        nameTextField.text = debt.name
+        amountTextField.text = debt.amount.description
+        numberTextField.text = debt.number.description
+        commentTextField.text = debt.comment
+     
+        startDate.date = debt.startDate ?? Date()
+        finalDate.date = debt.finalDate ?? Date()
     }
 }
 

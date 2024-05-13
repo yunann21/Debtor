@@ -32,10 +32,12 @@ final class MainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let informationVC = segue.destination as? InformationViewController {
+            informationVC.delegate = self
             let index = tableView.indexPathForSelectedRow?.row ?? 0
             informationVC.debt = debtors[index]
         } else if let addingVC = segue.destination as? AddingTableViewController {
             addingVC.delegate = self
+    
         }
         
         
@@ -53,12 +55,7 @@ final class MainViewController: UIViewController {
     }
     
     private func fetchData() {
-        let fetchRequest = DebtInfo.fetchRequest()
-        do {
-            debtors = try StorageManager.shared.persistentContainer.viewContext.fetch(fetchRequest)
-        } catch {
-            print(error)
-        }
+        debtors = StorageManager.shared.fetchData()
     }
 }
     
@@ -73,6 +70,7 @@ extension MainViewController: UITableViewDataSource {
         let infoDebt = debtors[indexPath.row]
         var content = cell.defaultContentConfiguration()
         content.text = infoDebt.name
+        content.secondaryText = infoDebt.amount.description
         
         //var config = cell.defaultContentConfiguration()
         //config.text = debts[indexPath.row].debtor.fullName
@@ -89,11 +87,48 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
-} 
+    
+    // MARK: - UITableViewDelegate
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let debt = debtors[indexPath.row]
+        
+        let deleteAction = UIContextualAction(style: .destructive, title: "Delete") { [unowned self] _,_,_ in
+            StorageManager.shared.deleteDebt(debt: debt)
+            debtors.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+//        
+//        let editAction = UIContextualAction(style: .normal, title: "Edit") { [unowned self] _, _, isDone in
+//            showAlert(with: debtors) {
+//                tableView.reloadRows(at: [indexPath], with: .automatic)
+//            }
+//            isDone(true)
+//        }
+//        
+//        let doneAction = UIContextualAction(style: .normal, title: "Done") { [unowned self] _, _, isDone in
+//            storageManager.done(debtors)
+//            tableView.reloadRows(at: [indexPath], with: .automatic)
+//            isDone(true)
+//        }
+        
+//        editAction.backgroundColor = .orange
+//        doneAction.backgroundColor =  colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
+        
+        return UISwipeActionsConfiguration(actions: //[doneAction, editAction,
+                                                    [ deleteAction])
+    }
+}
 
 extension MainViewController: AddingTableViewControllerDelegate {
+
+    
     func reloadData() {
-        fetchData()
-        tableView.reloadData()
+//        DispatchQueue.main.async {
+            fetchData()
+            tableView.reloadData()
+//        }
     }
+    
+    
+    
 }
