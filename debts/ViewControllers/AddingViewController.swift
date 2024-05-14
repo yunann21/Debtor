@@ -13,4 +13,12 @@ final class AddingViewController: UITableViewController {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
     }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        8
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        <#code#>
+    }
 }

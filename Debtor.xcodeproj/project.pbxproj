@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		160838D02BF37C0E002F6504 /* AddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160838CF2BF37C0E002F6504 /* AddingViewController.swift */; };
+		160838D52BF38129002F6504 /* CustomCell + textField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160838D42BF38129002F6504 /* CustomCell + textField.swift */; };
+		160838D72BF38373002F6504 /* CustomCell + datePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160838D62BF38373002F6504 /* CustomCell + datePicker.swift */; };
+		160838D92BF384B0002F6504 /* CustomCell + TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160838D82BF384B0002F6504 /* CustomCell + TextView.swift */; };
+		160838DB2BF38647002F6504 /* CustomCell + Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160838DA2BF38647002F6504 /* CustomCell + Switch.swift */; };
 		167A559C2BC515E5008251BE /* UIView + Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A559B2BC515E5008251BE /* UIView + Animation.swift */; };
 		167A55D62BD7ADBC008251BE /* InfoDebtor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 167A55D42BD7ADBC008251BE /* InfoDebtor.xcdatamodeld */; };
 		167A55D82BD7AE68008251BE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A55D72BD7AE68008251BE /* StorageManager.swift */; };
@@ -33,6 +37,10 @@
 
 /* Begin PBXFileReference section */
 		160838CF2BF37C0E002F6504 /* AddingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingViewController.swift; sourceTree = "<group>"; };
+		160838D42BF38129002F6504 /* CustomCell + textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCell + textField.swift"; sourceTree = "<group>"; };
+		160838D62BF38373002F6504 /* CustomCell + datePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCell + datePicker.swift"; sourceTree = "<group>"; };
+		160838D82BF384B0002F6504 /* CustomCell + TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCell + TextView.swift"; sourceTree = "<group>"; };
+		160838DA2BF38647002F6504 /* CustomCell + Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCell + Switch.swift"; sourceTree = "<group>"; };
 		167A559B2BC515E5008251BE /* UIView + Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Animation.swift"; sourceTree = "<group>"; };
 		167A55D52BD7ADBC008251BE /* StorageManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StorageManager.xcdatamodel; sourceTree = "<group>"; };
 		167A55D72BD7AE68008251BE /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -97,12 +105,24 @@
 			path = App;
 			sourceTree = "<group>";
 		};
+		160838D32BF38107002F6504 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				160838D42BF38129002F6504 /* CustomCell + textField.swift */,
+				160838D62BF38373002F6504 /* CustomCell + datePicker.swift */,
+				160838D82BF384B0002F6504 /* CustomCell + TextView.swift */,
+				160838DA2BF38647002F6504 /* CustomCell + Switch.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		167A55DE2BF1FE73008251BE /* debts */ = {
 			isa = PBXGroup;
 			children = (
 				160838D22BF37F4E002F6504 /* App */,
 				160838D12BF37F08002F6504 /* ViewControllers */,
 				167A55E82BF1FE74008251BE /* Assets.xcassets */,
+				160838D32BF38107002F6504 /* Views */,
 				167A55EA2BF1FE74008251BE /* LaunchScreen.storyboard */,
 			);
 			path = debts;
@@ -317,7 +337,11 @@
 			files = (
 				167A55E42BF1FE73008251BE /* ListViewController.swift in Sources */,
 				167A55E02BF1FE73008251BE /* AppDelegate.swift in Sources */,
+				160838D52BF38129002F6504 /* CustomCell + textField.swift in Sources */,
 				167A55E22BF1FE73008251BE /* SceneDelegate.swift in Sources */,
+				160838DB2BF38647002F6504 /* CustomCell + Switch.swift in Sources */,
+				160838D72BF38373002F6504 /* CustomCell + datePicker.swift in Sources */,
+				160838D92BF384B0002F6504 /* CustomCell + TextView.swift in Sources */,
 				160838D02BF37C0E002F6504 /* AddingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
