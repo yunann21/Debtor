@@ -24,9 +24,7 @@ final class AddingTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,19 +47,14 @@ final class AddingTableViewController: UITableViewController {
             title: "Да",
             style: .destructive
         ) { [unowned self] in
-
-            #warning("To do: delete debt")
-        
             navigationController?.popToRootViewController(animated: true)
             StorageManager.shared.deleteDebt(debt: debt)
             delegate?.reloadData()
-            
         }
         alertBuilder.addAction(
             title: "Нет",
             style: .default
         )
-        
         present(alertBuilder.build(), animated: true)
     }
     
@@ -98,6 +91,7 @@ final class AddingTableViewController: UITableViewController {
         
         if startDate.date > finalDate.date {
             startDate.shake()
+            startDate.setDate(finalDate.date, animated: true)
             finalDate.shake()
             let alertBuilder = AlertControllerBuilder(
                 title: "Ошибка",
@@ -105,17 +99,32 @@ final class AddingTableViewController: UITableViewController {
             )
             alertBuilder.addAction(
                 title: "ОК",
-                style: .destructive) { [unowned self] in
-                    startDate.date = finalDate.date
-                }
+                style: .destructive)
             present(alertBuilder.build(), animated: true)
-        }
-        if let debt {
-#warning ("добавить функцию обновления данных")
-        } else {
-            StorageManager.shared.createDebt(name: nameTextField.text ?? "", amount: Int(amountTextField.text ?? "") ?? 0, comment: commentTextField.text ?? "", finalDate: finalDate.date, number: Int(numberTextField.text ?? "") ?? 0, startDate: startDate.date)
+            return
         }
         
+        if let debt {
+#warning ("добавить функцию обновления данных")
+
+            debt.name = nameTextField.text ?? ""
+            debt.amount = Int64(amountTextField.text ?? "") ?? 0
+            debt.comment = commentTextField.text ?? ""
+            debt.finalDate = finalDate.date
+            debt.number = Int64(numberTextField.text ?? "") ?? 0
+            debt.startDate = startDate.date
+            
+            StorageManager.shared.DebtDataUpdate()
+        } else {
+            StorageManager.shared.createDebt(
+                name: nameTextField.text ?? "",
+                amount: Int(amountTextField.text ?? "") ?? 0,
+                comment: commentTextField.text ?? "",
+                finalDate: finalDate.date,
+                number: Int(numberTextField.text ?? "") ?? 0,
+                startDate: startDate.date
+            )
+        }
         
         delegate?.reloadData()
         
@@ -123,7 +132,6 @@ final class AddingTableViewController: UITableViewController {
         
     }
     
- 
     private func setupUI() {
         commentTextField.layer.borderColor = UIColor(named: "border")?.cgColor
         commentTextField.layer.cornerRadius = 8

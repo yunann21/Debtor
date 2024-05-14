@@ -40,9 +40,7 @@ final class MainViewController: UIViewController {
     
         }
         
-        
     }
-    
     
     @IBAction func chooseDirection(_ sender: UISwitch) {
         if sender.isOn {

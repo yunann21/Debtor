@@ -29,7 +29,23 @@ final class InformationViewController: UIViewController {
     
     
     @IBAction func deleteButton() {
-        //+ alert
+        var alertBuilder = AlertControllerBuilder(
+            title: "Внимание!",
+            message: "Вы уверены, что хотите удалить долг?"
+        )
+        alertBuilder.addAction(
+            title: "Да",
+            style: .destructive
+        ) { [unowned self] in
+            navigationController?.popToRootViewController(animated: true)
+            StorageManager.shared.deleteDebt(debt: debt)
+            delegate?.reloadData()
+        }
+        alertBuilder.addAction(
+            title: "Нет",
+            style: .default
+        )
+        present(alertBuilder.build(), animated: true)
         navigationController?.popViewController(animated: true)
     }
     
@@ -65,9 +81,6 @@ extension InformationViewController: UITableViewDataSource {
         }
         return debtCell
     }
-    
-
-    
 }
 
 

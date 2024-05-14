@@ -66,7 +66,11 @@ final class StorageManager {
         saveContext()
     }
     
-        //func editDebt(debt:)
+    func DebtDataUpdate() {
+        saveContext()
+        
+        
+    }
     
     
 }
