@@ -20,6 +20,9 @@ class CustomTableViewCellTV: UITableViewCell {
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.isEditable = true
         textView.isScrollEnabled = false
+        textView.layer.borderColor = UIColor(named: "border")?.cgColor
+        textView.layer.cornerRadius = 8
+        textView.layer.borderWidth = 1.0
         return textView
     }()
     
@@ -29,13 +32,21 @@ class CustomTableViewCellTV: UITableViewCell {
         addSubview(label)
         addSubview(textView)
         
-        label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
-        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        
-        textView.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 8).isActive = true
-        textView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
-        textView.topAnchor.constraint(equalTo: topAnchor, constant: 8).isActive = true
-        textView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -8).isActive = true
+        let labelConstraints = [
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
+        ]
+        let textViewConstraints = [
+            textView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            textView.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 20),
+            textView.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            textView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+            textView.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5),
+            textView.heightAnchor.constraint(equalToConstant: 100)
+        ]
+        NSLayoutConstraint.activate(labelConstraints)
+        NSLayoutConstraint.activate(textViewConstraints)
     }
     
     required init?(coder aDecoder: NSCoder) {

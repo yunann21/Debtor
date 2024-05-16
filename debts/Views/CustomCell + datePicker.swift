@@ -27,11 +27,19 @@ class CustomTableViewCellDP: UITableViewCell {
         addSubview(label)
         addSubview(datePicker)
         
-        label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
-        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        
-        datePicker.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
-        datePicker.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        let labelConstraints = [
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
+        ]
+        let dataPickerConstraints = [
+            datePicker.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            datePicker.widthAnchor.constraint(equalTo: widthAnchor, constant: 0.5),
+            datePicker.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            datePicker.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
+        ]
+        NSLayoutConstraint.activate(labelConstraints)
+        NSLayoutConstraint.activate(dataPickerConstraints)
     }
     
     required init?(coder aDecoder: NSCoder) {

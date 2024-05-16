@@ -28,11 +28,18 @@ class CustomTableViewCellS: UITableViewCell {
         addSubview(label)
         addSubview(switchControl)
         
-        label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
-        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        
-        switchControl.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
-        switchControl.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        let labelConstraints = [
+            label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+            label.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
+        ]
+        let switchControlConstraints = [
+            switchControl.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+            switchControl.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+            switchControl.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
+        ]
+        NSLayoutConstraint.activate(labelConstraints)
+        NSLayoutConstraint.activate(switchControlConstraints)
     }
     
     required init?(coder aDecoder: NSCoder) {

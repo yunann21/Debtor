@@ -26,11 +26,20 @@ class CustomTableViewCellTF: UITableViewCell {
         addSubview(label)
         addSubview(textField)
         
-        label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16).isActive = true
-        label.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-        
-        textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16).isActive = true
-        textField.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        let labelConstraints = [
+        label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
+        label.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+        label.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5)
+        ]
+        let textFieldConstraints = [
+        textField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
+        textField.leadingAnchor.constraint(equalTo: label.trailingAnchor, constant: 20),
+        textField.topAnchor.constraint(equalTo: topAnchor, constant: 5),
+        textField.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -5),
+        textField.widthAnchor.constraint(equalTo: widthAnchor, multiplier: 0.5)
+        ]
+        NSLayoutConstraint.activate(labelConstraints)
+        NSLayoutConstraint.activate(textFieldConstraints)
     }
     
     required init?(coder aDecoder: NSCoder) {
