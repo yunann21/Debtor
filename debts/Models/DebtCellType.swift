@@ -28,8 +28,31 @@ enum DebtCellType: Int {
         ]
     }
     
+    static func labelText(for row: Int) -> String {
+        switch row {
+        case 0:
+            "ФИО"
+        case 1:
+            "Номер"
+        case 2:
+            "Сумма"
+        case 3:
+            "Дата начала"
+        case 4:
+            "Дата окончания"
+        case 5:
+            "Комментарий"
+        case 6:
+            "Уведомление"
+        default:
+            "unknown"
+        }
+    }
+    
      static func convert(rowValue: Int ) -> DebtCellType {
         values[rowValue]
     }
+    
+    
 }
 

@@ -11,7 +11,7 @@ final class MainNavigationController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViewControllers([AddingViewController()], animated: true)
+        setViewControllers([ListDebtorsController()], animated: true)
         navigationBar.prefersLargeTitles = true
         
     }

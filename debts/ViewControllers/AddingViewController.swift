@@ -19,23 +19,21 @@ final class AddingViewController: UIViewController {
         table.register(CustomTableViewCellB.self, forCellReuseIdentifier: "cellB")
         
         return table
-    } ()
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         debtsList.dataSource = self
         debtsList.delegate = self
         
         setupUI()
         setupConstrains()
-
-        
     }
     
     private func setupUI() {
-        title = "Список должников"
-        
+        title = "Добавить долг"
         view.addSubview(debtsList)
     }
     
@@ -58,46 +56,42 @@ extension AddingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellType = DebtCellType.convert(rowValue: indexPath.row)
+        let labelText = DebtCellType.labelText(for: indexPath.row)
         
         switch cellType {
         case .textFieldCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellTF", for: indexPath)
             if let cellTF = cell as? CustomTableViewCellTF {
-                cellTF.label.text = "34567"
+                cellTF.label.text = labelText
                 return cellTF
             }
         case .dataPickerCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellDP", for: indexPath)
             if let cellDP = cell as? CustomTableViewCellDP {
-                cellDP.label.text = "34567"
+                cellDP.label.text = labelText
                 return cellDP
             }
         case .textViewCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellTV", for: indexPath)
             if let cellTV = cell as? CustomTableViewCellTV {
-                cellTV.label.text = "34567"
+                cellTV.label.text = labelText
                 return cellTV
             }
         case .switchCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellS", for: indexPath)
             if let cellS = cell as? CustomTableViewCellS {
-                cellS.label.text = "34567"
+                cellS.label.text = labelText
                 return cellS
             }
         case .buttonCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellB", for: indexPath)
             if let cellB = cell as? CustomTableViewCellB {
-                cellB.buttonExitOrDelete.setTitle("Удалить", for: .normal)
+                cellB.buttonExitOrDelete.setTitle("Отмена", for: .normal)
                 cellB.buttonSave.setTitle("Сохранить", for: .normal)
-                
                 return cellB
             }
         }
         
-       
         return UITableViewCell()
     }
-    
-
-    
 }
