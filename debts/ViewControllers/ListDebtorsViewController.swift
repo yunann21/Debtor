@@ -7,19 +7,22 @@
 
 import UIKit
 
-final class ListDebtorsController: UITableViewController {
+final class ListDebtorsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(CustomCellDebtorView.self, forCellReuseIdentifier: "cell")
         tableView.dataSource = self
         tableView.delegate = self
+        
 
         setupUI()
+        
     }
     
     @objc func addButtonTapped() {
-            print("Add button tapped")
+        let addingVC = AddingViewController()
+                navigationController?.pushViewController(addingVC, animated: true)
         }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -34,12 +37,17 @@ final class ListDebtorsController: UITableViewController {
     }
     
     private func setupUI() {
-        title = "Список должников"
         setupNavigationBar()
     }
     
     private func setupNavigationBar() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addButtonTapped)
+        )
+        navigationItem.backButtonTitle = "Назад"
+        navigationItem.title = "Список должников"
     }
     
 

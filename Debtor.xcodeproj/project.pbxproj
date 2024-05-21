@@ -18,12 +18,13 @@
 		167A55E22BF1FE73008251BE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A55E12BF1FE73008251BE /* SceneDelegate.swift */; };
 		167A55E92BF1FE74008251BE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 167A55E82BF1FE74008251BE /* Assets.xcassets */; };
 		167A55EC2BF1FE74008251BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 167A55EA2BF1FE74008251BE /* LaunchScreen.storyboard */; };
-		1680095E2BF4FA10006FECF9 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1680095D2BF4FA10006FECF9 /* TabBarController.swift */; };
+		1680095E2BF4FA10006FECF9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1680095D2BF4FA10006FECF9 /* TabBarViewController.swift */; };
 		168009602BF5FFE1006FECF9 /* CustomCell + Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1680095F2BF5FFE1006FECF9 /* CustomCell + Button.swift */; };
 		168009642BF60547006FECF9 /* DebtCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168009632BF60547006FECF9 /* DebtCellType.swift */; };
-		168009682BF6194D006FECF9 /* ListDebtorsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168009672BF6194D006FECF9 /* ListDebtorsController.swift */; };
+		168009682BF6194D006FECF9 /* ListDebtorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168009672BF6194D006FECF9 /* ListDebtorsViewController.swift */; };
 		1680096A2BF61DBE006FECF9 /* CustomCellDebtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168009692BF61DBE006FECF9 /* CustomCellDebtor.swift */; };
-		169474232BF3A8E5007976E6 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169474222BF3A8E5007976E6 /* MainNavigationController.swift */; };
+		1680096C2BFCC93C006FECF9 /* InformationAboutTheDebtorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1680096B2BFCC93C006FECF9 /* InformationAboutTheDebtorViewController.swift */; };
+		169474232BF3A8E5007976E6 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169474222BF3A8E5007976E6 /* MainNavigationViewController.swift */; };
 		169474252BF3A996007976E6 /* AddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169474242BF3A996007976E6 /* AddingViewController.swift */; };
 		16970E792BA2DF1C0014FC81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970E782BA2DF1C0014FC81 /* AppDelegate.swift */; };
 		16970E7B2BA2DF1C0014FC81 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970E7A2BA2DF1C0014FC81 /* SceneDelegate.swift */; };
@@ -54,12 +55,13 @@
 		167A55E82BF1FE74008251BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		167A55EB2BF1FE74008251BE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		167A55ED2BF1FE74008251BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1680095D2BF4FA10006FECF9 /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		1680095D2BF4FA10006FECF9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		1680095F2BF5FFE1006FECF9 /* CustomCell + Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCell + Button.swift"; sourceTree = "<group>"; };
 		168009632BF60547006FECF9 /* DebtCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebtCellType.swift; sourceTree = "<group>"; };
-		168009672BF6194D006FECF9 /* ListDebtorsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDebtorsController.swift; sourceTree = "<group>"; };
+		168009672BF6194D006FECF9 /* ListDebtorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDebtorsViewController.swift; sourceTree = "<group>"; };
 		168009692BF61DBE006FECF9 /* CustomCellDebtor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellDebtor.swift; sourceTree = "<group>"; };
-		169474222BF3A8E5007976E6 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
+		1680096B2BFCC93C006FECF9 /* InformationAboutTheDebtorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAboutTheDebtorViewController.swift; sourceTree = "<group>"; };
+		169474222BF3A8E5007976E6 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		169474242BF3A996007976E6 /* AddingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingViewController.swift; sourceTree = "<group>"; };
 		16970E752BA2DF1C0014FC81 /* Debtor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debtor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		16970E782BA2DF1C0014FC81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,10 +101,11 @@
 		160838D12BF37F08002F6504 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1680095D2BF4FA10006FECF9 /* TabBarController.swift */,
-				169474222BF3A8E5007976E6 /* MainNavigationController.swift */,
-				168009672BF6194D006FECF9 /* ListDebtorsController.swift */,
+				1680095D2BF4FA10006FECF9 /* TabBarViewController.swift */,
+				169474222BF3A8E5007976E6 /* MainNavigationViewController.swift */,
+				168009672BF6194D006FECF9 /* ListDebtorsViewController.swift */,
 				169474242BF3A996007976E6 /* AddingViewController.swift */,
+				1680096B2BFCC93C006FECF9 /* InformationAboutTheDebtorViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -364,13 +367,14 @@
 				1680096A2BF61DBE006FECF9 /* CustomCellDebtor.swift in Sources */,
 				168009602BF5FFE1006FECF9 /* CustomCell + Button.swift in Sources */,
 				167A55E22BF1FE73008251BE /* SceneDelegate.swift in Sources */,
-				1680095E2BF4FA10006FECF9 /* TabBarController.swift in Sources */,
-				169474232BF3A8E5007976E6 /* MainNavigationController.swift in Sources */,
+				1680096C2BFCC93C006FECF9 /* InformationAboutTheDebtorViewController.swift in Sources */,
+				1680095E2BF4FA10006FECF9 /* TabBarViewController.swift in Sources */,
+				169474232BF3A8E5007976E6 /* MainNavigationViewController.swift in Sources */,
 				160838DB2BF38647002F6504 /* CustomCell + Switch.swift in Sources */,
 				169474252BF3A996007976E6 /* AddingViewController.swift in Sources */,
 				160838D72BF38373002F6504 /* CustomCell + datePicker.swift in Sources */,
 				160838D92BF384B0002F6504 /* CustomCell + TextView.swift in Sources */,
-				168009682BF6194D006FECF9 /* ListDebtorsController.swift in Sources */,
+				168009682BF6194D006FECF9 /* ListDebtorsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

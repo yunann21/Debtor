@@ -35,8 +35,8 @@ final class MainViewController: UIViewController {
             informationVC.delegate = self
             let index = tableView.indexPathForSelectedRow?.row ?? 0
             informationVC.debt = debtors[index]
-        } else if let addingVC = segue.destination as? AddingTableViewController {
-            addingVC.delegate = self
+        } else if let addingTVC = segue.destination as? AddingTableViewController {
+            addingTVC.delegate = self
     
         }
         

@@ -7,12 +7,13 @@
 
 import UIKit
 
-final class MainNavigationController: UINavigationController {
+final class MainNavigationViewController: UINavigationController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setViewControllers([ListDebtorsController()], animated: true)
+        setViewControllers([ListDebtorsViewController()], animated: true)
         navigationBar.prefersLargeTitles = true
+        
         
     }
 }

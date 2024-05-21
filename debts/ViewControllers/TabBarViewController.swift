@@ -7,17 +7,19 @@
 
 import UIKit
 
-final class TabBarController: UITabBarController {
+final class TabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let VC1 = MainNavigationController()
+        let VC1 = MainNavigationViewController()
         setViewControllers([VC1], animated: true)
+        VC1.tabBarItem.image = UIImage(systemName: "book.fill")
+        VC1.title = "История"
     }
     
 }
 
 #Preview {
-    TabBarController()
+    TabBarViewController()
 }

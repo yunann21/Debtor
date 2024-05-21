@@ -6,6 +6,7 @@
 //
 
 import UIKit
+
 final class AddingViewController: UIViewController {
     
     let debtsList: UITableView = {
@@ -23,7 +24,6 @@ final class AddingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         debtsList.dataSource = self
         debtsList.delegate = self
@@ -93,5 +93,9 @@ extension AddingViewController: UITableViewDataSource, UITableViewDelegate {
         }
         
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
     }
 }
