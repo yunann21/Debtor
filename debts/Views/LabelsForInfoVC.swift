@@ -19,7 +19,7 @@ class LabelsForInfoVC {
         number.text = "number"
         
         let nameConstraints = [
-            name.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
+            name.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 10),
             name.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ]
         
