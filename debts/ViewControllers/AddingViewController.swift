@@ -12,7 +12,6 @@ final class AddingViewController: UIViewController {
     let debtsList: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false // отключение автоконстрейнтов
-//        table.backgroundColor = .systemBackground
         table.register(CustomTableViewCellTF.self, forCellReuseIdentifier: "cellTF")
         table.register(CustomTableViewCellDP.self, forCellReuseIdentifier: "cellDP")
         table.register(CustomTableViewCellTV.self, forCellReuseIdentifier: "cellTV")

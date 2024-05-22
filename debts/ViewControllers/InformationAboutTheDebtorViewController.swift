@@ -22,30 +22,31 @@ final class InformationAboutTheDebtorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        informationList.dataSource = self
+        informationList.delegate = self
+        
         view.backgroundColor = .systemBackground
         
         setupUI()
-//        setupConstrains()
-        
-        
-//        informationList.dataSource = self
-//        informationList.delegate = self
+        setupTableConstrains()
         
     }
     
-    private func setupConstrains() {
+    private func setupTableConstrains() {
         let informationListConstraints = [
-            informationList.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
+            informationList.topAnchor.constraint(equalTo: labelNumber.bottomAnchor , constant: 10),
             informationList.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
             informationList.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
             informationList.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
         ]
         NSLayoutConstraint.activate(informationListConstraints)
+        
     }
     
     private func setupUI() {
         LabelsForInfoVC.setupLabels(for: view, name: labelName, number: labelNumber)
-        
+        title = "Информация о долге"
+        view.addSubview(informationList)
     }
     
 }
@@ -59,6 +60,9 @@ extension InformationAboutTheDebtorViewController: UITableViewDataSource, UITabl
         UITableViewCell()
     }
     
+    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        return nil
+    }
     
 }
 
