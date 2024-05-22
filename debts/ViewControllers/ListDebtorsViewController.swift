@@ -36,6 +36,11 @@ final class ListDebtorsViewController: UITableViewController {
         return cellV
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        navigationController?.pushViewController(InformationAboutTheDebtorViewController(), animated: true)
+    }
+    
     private func setupUI() {
         setupNavigationBar()
     }

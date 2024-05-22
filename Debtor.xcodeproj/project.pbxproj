@@ -24,6 +24,7 @@
 		168009682BF6194D006FECF9 /* ListDebtorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168009672BF6194D006FECF9 /* ListDebtorsViewController.swift */; };
 		1680096A2BF61DBE006FECF9 /* CustomCellDebtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168009692BF61DBE006FECF9 /* CustomCellDebtor.swift */; };
 		1680096C2BFCC93C006FECF9 /* InformationAboutTheDebtorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1680096B2BFCC93C006FECF9 /* InformationAboutTheDebtorViewController.swift */; };
+		1680096E2BFCCC98006FECF9 /* LabelsForInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1680096D2BFCCC98006FECF9 /* LabelsForInfoVC.swift */; };
 		169474232BF3A8E5007976E6 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169474222BF3A8E5007976E6 /* MainNavigationViewController.swift */; };
 		169474252BF3A996007976E6 /* AddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169474242BF3A996007976E6 /* AddingViewController.swift */; };
 		16970E792BA2DF1C0014FC81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970E782BA2DF1C0014FC81 /* AppDelegate.swift */; };
@@ -61,6 +62,7 @@
 		168009672BF6194D006FECF9 /* ListDebtorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListDebtorsViewController.swift; sourceTree = "<group>"; };
 		168009692BF61DBE006FECF9 /* CustomCellDebtor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellDebtor.swift; sourceTree = "<group>"; };
 		1680096B2BFCC93C006FECF9 /* InformationAboutTheDebtorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAboutTheDebtorViewController.swift; sourceTree = "<group>"; };
+		1680096D2BFCCC98006FECF9 /* LabelsForInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelsForInfoVC.swift; sourceTree = "<group>"; };
 		169474222BF3A8E5007976E6 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		169474242BF3A996007976E6 /* AddingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingViewController.swift; sourceTree = "<group>"; };
 		16970E752BA2DF1C0014FC81 /* Debtor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debtor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,6 +131,7 @@
 				160838D82BF384B0002F6504 /* CustomCell + TextView.swift */,
 				160838DA2BF38647002F6504 /* CustomCell + Switch.swift */,
 				1680095F2BF5FFE1006FECF9 /* CustomCell + Button.swift */,
+				1680096D2BFCCC98006FECF9 /* LabelsForInfoVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -373,6 +376,7 @@
 				160838DB2BF38647002F6504 /* CustomCell + Switch.swift in Sources */,
 				169474252BF3A996007976E6 /* AddingViewController.swift in Sources */,
 				160838D72BF38373002F6504 /* CustomCell + datePicker.swift in Sources */,
+				1680096E2BFCCC98006FECF9 /* LabelsForInfoVC.swift in Sources */,
 				160838D92BF384B0002F6504 /* CustomCell + TextView.swift in Sources */,
 				168009682BF6194D006FECF9 /* ListDebtorsViewController.swift in Sources */,
 			);
