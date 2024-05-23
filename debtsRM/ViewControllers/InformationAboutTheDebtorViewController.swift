@@ -1,17 +1,18 @@
 //
-//  ListVC.swift
+//  InformationAboutTheDebtorController.swift
 //  debts
 //
-//  Created by Anna Ablogina on 14.05.2024.
+//  Created by Anna Ablogina on 21.05.2024.
 //
 
 import UIKit
 
-final class AddingViewController: UIViewController {
+final class InformationAboutTheDebtorViewController: UIViewController {
     
-    let debtsList: UITableView = {
+    let informationList: UITableView = {
         let table = UITableView()
-        table.translatesAutoresizingMaskIntoConstraints = false // отключение автоконстрейнтов
+        table.translatesAutoresizingMaskIntoConstraints = false
+        
         table.register(CustomTableViewCellTF.self, forCellReuseIdentifier: "cellTF")
         table.register(CustomTableViewCellDP.self, forCellReuseIdentifier: "cellDP")
         table.register(CustomTableViewCellTV.self, forCellReuseIdentifier: "cellTV")
@@ -21,40 +22,47 @@ final class AddingViewController: UIViewController {
         return table
     }()
     
+    let labelName = UILabel()
+    let labelNumber = UILabel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        debtsList.dataSource = self
-        debtsList.delegate = self
+        informationList.dataSource = self
+        informationList.delegate = self
+        
         view.backgroundColor = .systemBackground
         
         setupUI()
-        setupConstrains()
+        setupTableConstrains()
+        
+    }
+    
+    private func setupTableConstrains() {
+        let informationListConstraints = [
+            informationList.topAnchor.constraint(equalTo: labelNumber.bottomAnchor , constant: 10),
+            informationList.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            informationList.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            informationList.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
+        ]
+        NSLayoutConstraint.activate(informationListConstraints)
+        
     }
     
     private func setupUI() {
-        title = "Добавить долг"
-        view.addSubview(debtsList)
+        LabelsForInfoVC.setupLabels(for: view, name: labelName, number: labelNumber)
+        title = "Информация о долге"
+        view.addSubview(informationList)
     }
     
-    private func setupConstrains() {
-        let debtsListConstraints = [
-            debtsList.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0),
-            debtsList.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            debtsList.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
-            debtsList.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor)
-        ]
-        NSLayoutConstraint.activate(debtsListConstraints)
-    }
 }
 
-extension AddingViewController: UITableViewDataSource, UITableViewDelegate {
+extension InformationAboutTheDebtorViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         DebtCellType.values.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cellType = DebtCellType.convert(rowValue: indexPath.row)
         let labelText = DebtCellType.labelText(for: indexPath.row)
         
@@ -63,18 +71,21 @@ extension AddingViewController: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellTF", for: indexPath)
             if let cellTF = cell as? CustomTableViewCellTF {
                 cellTF.label.text = labelText
+                cellTF.label.isUserInteractionEnabled = false
                 return cellTF
             }
         case .dataPickerCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellDP", for: indexPath)
             if let cellDP = cell as? CustomTableViewCellDP {
                 cellDP.label.text = labelText
+                cellDP.label.isUserInteractionEnabled = false
                 return cellDP
             }
         case .textViewCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellTV", for: indexPath)
             if let cellTV = cell as? CustomTableViewCellTV {
                 cellTV.label.text = labelText
+                cellTV.label.isEnabled = false
                 return cellTV
             }
         case .switchCell:
@@ -86,8 +97,8 @@ extension AddingViewController: UITableViewDataSource, UITableViewDelegate {
         case .buttonCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellB", for: indexPath)
             if let cellB = cell as? CustomTableViewCellB {
-                cellB.buttonExitOrDelete.setTitle("Отмена", for: .normal)
-                cellB.buttonSave.setTitle("Сохранить", for: .normal)
+                cellB.buttonExitOrDelete.setTitle("Удалить", for: .normal)
+                cellB.buttonSave.setTitle("Редактировать", for: .normal)
                 return cellB
             }
         }
@@ -98,4 +109,6 @@ extension AddingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
         return nil
     }
+    
 }
+

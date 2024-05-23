@@ -25,8 +25,8 @@ class CustomTableViewCellB: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addSubview(buttonExitOrDelete)
-        addSubview(buttonSave)
+        contentView.addSubview(buttonExitOrDelete)
+        contentView.addSubview(buttonSave)
         
         let buttonExitConstraints = [
             buttonExitOrDelete.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),

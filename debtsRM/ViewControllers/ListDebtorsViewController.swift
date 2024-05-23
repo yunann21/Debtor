@@ -9,6 +9,8 @@ import UIKit
 
 final class ListDebtorsViewController: UITableViewController {
     
+    let debts = DebtRM.generateDebts()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(CustomCellDebtorView.self, forCellReuseIdentifier: "cell")
@@ -26,19 +28,30 @@ final class ListDebtorsViewController: UITableViewController {
         }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        1
+        debts.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         guard let cellV = cell as? CustomCellDebtorView else {return cell}
         
+        let modelDebt = debts[indexPath.row]
+        
+        let content = cellV
+        content.nameLabel.text = modelDebt.name
+        content.amountLabel.text = modelDebt.amountOfDebt.description
+        content.startDateLabel.text = modelDebt.startDate.toString()
+        content.finalDateLabel.text = modelDebt.finishDate.toString()
+        
         return cellV
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        navigationController?.pushViewController(InformationAboutTheDebtorViewController(), animated: true)
+        let addingVC = AddingViewController()
+        addingVC.name = "name"
+        
+        navigationController?.pushViewController(addingVC, animated: true)
     }
     
     private func setupUI() {

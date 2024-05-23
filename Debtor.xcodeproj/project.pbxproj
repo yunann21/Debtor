@@ -11,6 +11,8 @@
 		160838D72BF38373002F6504 /* CustomCell + datePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160838D62BF38373002F6504 /* CustomCell + datePicker.swift */; };
 		160838D92BF384B0002F6504 /* CustomCell + TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160838D82BF384B0002F6504 /* CustomCell + TextView.swift */; };
 		160838DB2BF38647002F6504 /* CustomCell + Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160838DA2BF38647002F6504 /* CustomCell + Switch.swift */; };
+		164966DF2BFF3FC00075F89B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 164966DE2BFF3FC00075F89B /* RealmSwift */; };
+		164967072BFF64270075F89B /* DateForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164967062BFF64270075F89B /* DateForm.swift */; };
 		167A559C2BC515E5008251BE /* UIView + Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A559B2BC515E5008251BE /* UIView + Animation.swift */; };
 		167A55D62BD7ADBC008251BE /* InfoDebtor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 167A55D42BD7ADBC008251BE /* InfoDebtor.xcdatamodeld */; };
 		167A55D82BD7AE68008251BE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A55D72BD7AE68008251BE /* StorageManager.swift */; };
@@ -25,6 +27,7 @@
 		1680096A2BF61DBE006FECF9 /* CustomCellDebtor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168009692BF61DBE006FECF9 /* CustomCellDebtor.swift */; };
 		1680096C2BFCC93C006FECF9 /* InformationAboutTheDebtorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1680096B2BFCC93C006FECF9 /* InformationAboutTheDebtorViewController.swift */; };
 		1680096E2BFCCC98006FECF9 /* LabelsForInfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1680096D2BFCCC98006FECF9 /* LabelsForInfoVC.swift */; };
+		168009752BFF3A0D006FECF9 /* Debt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 168009742BFF3A0D006FECF9 /* Debt.swift */; };
 		169474232BF3A8E5007976E6 /* MainNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169474222BF3A8E5007976E6 /* MainNavigationViewController.swift */; };
 		169474252BF3A996007976E6 /* AddingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169474242BF3A996007976E6 /* AddingViewController.swift */; };
 		16970E792BA2DF1C0014FC81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16970E782BA2DF1C0014FC81 /* AppDelegate.swift */; };
@@ -42,15 +45,29 @@
 		16A641EE2BB149E000CD19EE /* AlertControllerBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16A641ED2BB149E000CD19EE /* AlertControllerBuilder.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		164966D52BFF3DE70075F89B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		160838D42BF38129002F6504 /* CustomCell + textField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCell + textField.swift"; sourceTree = "<group>"; };
 		160838D62BF38373002F6504 /* CustomCell + datePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCell + datePicker.swift"; sourceTree = "<group>"; };
 		160838D82BF384B0002F6504 /* CustomCell + TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCell + TextView.swift"; sourceTree = "<group>"; };
 		160838DA2BF38647002F6504 /* CustomCell + Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCell + Switch.swift"; sourceTree = "<group>"; };
+		164967062BFF64270075F89B /* DateForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateForm.swift; sourceTree = "<group>"; };
 		167A559B2BC515E5008251BE /* UIView + Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Animation.swift"; sourceTree = "<group>"; };
 		167A55D52BD7ADBC008251BE /* StorageManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StorageManager.xcdatamodel; sourceTree = "<group>"; };
 		167A55D72BD7AE68008251BE /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
-		167A55DD2BF1FE73008251BE /* debts.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = debts.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		167A55DD2BF1FE73008251BE /* debtsRM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = debtsRM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		167A55DF2BF1FE73008251BE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		167A55E12BF1FE73008251BE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		167A55E82BF1FE74008251BE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -63,6 +80,7 @@
 		168009692BF61DBE006FECF9 /* CustomCellDebtor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellDebtor.swift; sourceTree = "<group>"; };
 		1680096B2BFCC93C006FECF9 /* InformationAboutTheDebtorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationAboutTheDebtorViewController.swift; sourceTree = "<group>"; };
 		1680096D2BFCCC98006FECF9 /* LabelsForInfoVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelsForInfoVC.swift; sourceTree = "<group>"; };
+		168009742BFF3A0D006FECF9 /* Debt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debt.swift; sourceTree = "<group>"; };
 		169474222BF3A8E5007976E6 /* MainNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationViewController.swift; sourceTree = "<group>"; };
 		169474242BF3A996007976E6 /* AddingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddingViewController.swift; sourceTree = "<group>"; };
 		16970E752BA2DF1C0014FC81 /* Debtor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Debtor.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +105,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				164966DF2BFF3FC00075F89B /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,9 +155,18 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		167A55DE2BF1FE73008251BE /* debts */ = {
+		164967052BFF63FC0075F89B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				164967062BFF64270075F89B /* DateForm.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		167A55DE2BF1FE73008251BE /* debtsRM */ = {
+			isa = PBXGroup;
+			children = (
+				164967052BFF63FC0075F89B /* Extensions */,
 				160838D12BF37F08002F6504 /* ViewControllers */,
 				160838D32BF38107002F6504 /* Views */,
 				168009622BF604F2006FECF9 /* Models */,
@@ -146,13 +174,14 @@
 				167A55EA2BF1FE74008251BE /* LaunchScreen.storyboard */,
 				167A55E82BF1FE74008251BE /* Assets.xcassets */,
 			);
-			path = debts;
+			path = debtsRM;
 			sourceTree = "<group>";
 		};
 		168009622BF604F2006FECF9 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				168009632BF60547006FECF9 /* DebtCellType.swift */,
+				168009742BFF3A0D006FECF9 /* Debt.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -161,7 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				16970E772BA2DF1C0014FC81 /* Debtor */,
-				167A55DE2BF1FE73008251BE /* debts */,
+				167A55DE2BF1FE73008251BE /* debtsRM */,
 				16970E762BA2DF1C0014FC81 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -170,7 +199,7 @@
 			isa = PBXGroup;
 			children = (
 				16970E752BA2DF1C0014FC81 /* Debtor.app */,
-				167A55DD2BF1FE73008251BE /* debts.app */,
+				167A55DD2BF1FE73008251BE /* debtsRM.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -266,21 +295,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		167A55DC2BF1FE73008251BE /* debts */ = {
+		167A55DC2BF1FE73008251BE /* debtsRM */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 167A55F02BF1FE74008251BE /* Build configuration list for PBXNativeTarget "debts" */;
+			buildConfigurationList = 167A55F02BF1FE74008251BE /* Build configuration list for PBXNativeTarget "debtsRM" */;
 			buildPhases = (
 				167A55D92BF1FE73008251BE /* Sources */,
 				167A55DA2BF1FE73008251BE /* Frameworks */,
 				167A55DB2BF1FE73008251BE /* Resources */,
+				164966D52BFF3DE70075F89B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = debts;
+			name = debtsRM;
+			packageProductDependencies = (
+				164966DE2BFF3FC00075F89B /* RealmSwift */,
+			);
 			productName = debts;
-			productReference = 167A55DD2BF1FE73008251BE /* debts.app */;
+			productReference = 167A55DD2BF1FE73008251BE /* debtsRM.app */;
 			productType = "com.apple.product-type.application";
 		};
 		16970E742BA2DF1C0014FC81 /* Debtor */ = {
@@ -327,12 +360,15 @@
 				Base,
 			);
 			mainGroup = 16970E6C2BA2DF1C0014FC81;
+			packageReferences = (
+				164966DB2BFF3FC00075F89B /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			productRefGroup = 16970E762BA2DF1C0014FC81 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				16970E742BA2DF1C0014FC81 /* Debtor */,
-				167A55DC2BF1FE73008251BE /* debts */,
+				167A55DC2BF1FE73008251BE /* debtsRM */,
 			);
 		};
 /* End PBXProject section */
@@ -365,9 +401,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				168009642BF60547006FECF9 /* DebtCellType.swift in Sources */,
+				164967072BFF64270075F89B /* DateForm.swift in Sources */,
 				167A55E02BF1FE73008251BE /* AppDelegate.swift in Sources */,
 				160838D52BF38129002F6504 /* CustomCell + textField.swift in Sources */,
 				1680096A2BF61DBE006FECF9 /* CustomCellDebtor.swift in Sources */,
+				168009752BFF3A0D006FECF9 /* Debt.swift in Sources */,
 				168009602BF5FFE1006FECF9 /* CustomCell + Button.swift in Sources */,
 				167A55E22BF1FE73008251BE /* SceneDelegate.swift in Sources */,
 				1680096C2BFCC93C006FECF9 /* InformationAboutTheDebtorViewController.swift in Sources */,
@@ -441,7 +479,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2S7QN778R5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = debts/App/Info.plist;
+				INFOPLIST_FILE = debtsRM/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -472,7 +510,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2S7QN778R5;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = debts/App/Info.plist;
+				INFOPLIST_FILE = debtsRM/App/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -678,7 +716,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		167A55F02BF1FE74008251BE /* Build configuration list for PBXNativeTarget "debts" */ = {
+		167A55F02BF1FE74008251BE /* Build configuration list for PBXNativeTarget "debtsRM" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				167A55EE2BF1FE74008251BE /* Debug */,
@@ -706,6 +744,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		164966DB2BFF3FC00075F89B /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		164966DE2BFF3FC00075F89B /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 164966DB2BFF3FC00075F89B /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		167A55D42BD7ADBC008251BE /* InfoDebtor.xcdatamodeld */ = {

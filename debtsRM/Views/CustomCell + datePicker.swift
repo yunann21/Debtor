@@ -24,8 +24,8 @@ class CustomTableViewCellDP: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addSubview(label)
-        addSubview(datePicker)
+        contentView.addSubview(label)
+        contentView.addSubview(datePicker)
         
         let labelConstraints = [
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),

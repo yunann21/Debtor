@@ -29,8 +29,8 @@ class CustomTableViewCellTV: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        addSubview(label)
-        addSubview(textView)
+        contentView.addSubview(label)
+        contentView.addSubview(textView)
         
         let labelConstraints = [
             label.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 16),
