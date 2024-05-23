@@ -49,7 +49,7 @@ final class ListDebtorsViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let addingVC = AddingViewController()
-        addingVC.name = "name"
+        addingVC.debt = debts[indexPath.row]
         
         navigationController?.pushViewController(addingVC, animated: true)
     }

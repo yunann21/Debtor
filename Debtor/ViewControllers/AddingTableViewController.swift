@@ -126,6 +126,7 @@ final class AddingTableViewController: UITableViewController {
             )
         }
         
+        
         delegate?.reloadData()
         
         navigationController?.popToRootViewController(animated: true)

@@ -12,6 +12,7 @@ final class AddingViewController: UIViewController {
     let debtsList: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false // отключение автоконстрейнтов
+        table.allowsSelection = false
         table.register(CustomTableViewCellTF.self, forCellReuseIdentifier: "cellTF")
         table.register(CustomTableViewCellDP.self, forCellReuseIdentifier: "cellDP")
         table.register(CustomTableViewCellTV.self, forCellReuseIdentifier: "cellTV")
@@ -22,6 +23,8 @@ final class AddingViewController: UIViewController {
     }()
     
     var name = ""
+    
+    var debt: DebtRM? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -60,30 +63,40 @@ extension AddingViewController: UITableViewDataSource, UITableViewDelegate {
         let cellType = DebtCellType.convert(rowValue: indexPath.row)
         let labelText = DebtCellType.labelText(for: indexPath.row)
         
+        let allowsEdit = debt == nil
+        
+        
         switch cellType {
         case .textFieldCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellTF", for: indexPath)
             if let cellTF = cell as? CustomTableViewCellTF {
                 cellTF.label.text = labelText
-                cellTF.textField.text = name
+                cellTF.textField.text = debt?.getValue(for: indexPath, type: String.self)
+                cellTF.textField.isEnabled = allowsEdit
                 return cellTF
             }
         case .dataPickerCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellDP", for: indexPath)
             if let cellDP = cell as? CustomTableViewCellDP {
                 cellDP.label.text = labelText
+                cellDP.datePicker.date = debt?.getValue(for: indexPath, type: Date.self) ?? Date()
+                cellDP.datePicker.isEnabled = allowsEdit
                 return cellDP
             }
         case .textViewCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellTV", for: indexPath)
             if let cellTV = cell as? CustomTableViewCellTV {
                 cellTV.label.text = labelText
+                cellTV.textView.text = debt?.getValue(for: indexPath, type: String.self)
+                cellTV.textView.isEditable = allowsEdit
                 return cellTV
             }
         case .switchCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellS", for: indexPath)
             if let cellS = cell as? CustomTableViewCellS {
                 cellS.label.text = labelText
+                cellS.switchControl.isOn = debt?.getValue(for: indexPath, type: Bool.self) ?? false
+                cellS.switchControl.isEnabled = allowsEdit
                 return cellS
             }
         case .buttonCell:
@@ -98,7 +111,4 @@ extension AddingViewController: UITableViewDataSource, UITableViewDelegate {
         return UITableViewCell()
     }
     
-    func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-        return nil
-    }
 }

@@ -38,4 +38,25 @@ struct DebtRM {
             )
         ]
     }
+    
+    func getValue<T>(for indexPath: IndexPath, type: T.Type) -> T?  {
+        switch indexPath.row {
+        case 0:
+            name as? T
+        case 1:
+            number.description as? T
+        case 2:
+            amountOfDebt.description as? T
+        case 3:
+            startDate as? T
+        case 4:
+            finishDate as? T
+        case 5:
+            comment as? T
+        case 6:
+            notification as? T
+        default:
+            ""  as? T
+        }
+    }
 }
