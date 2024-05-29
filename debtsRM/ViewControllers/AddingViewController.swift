@@ -9,6 +9,15 @@ import UIKit
 
 final class AddingViewController: UIViewController {
     
+    let rightButton = UIBarButtonItem(barButtonSystemItem: .compose, target: AddingViewController.self, action: #selector(rightButtonTapped))
+    
+    
+    var debtCellTypes: [DebtCellType] {
+        DebtCellType.values.filter {
+            debt == nil ? true : $0 != .buttonCell
+        }
+    }
+    
     let debtsList: UITableView = {
         let table = UITableView()
         table.translatesAutoresizingMaskIntoConstraints = false // отключение автоконстрейнтов
@@ -37,9 +46,16 @@ final class AddingViewController: UIViewController {
         setupConstrains()
     }
     
+    @objc func rightButtonTapped() {
+           print("Right button tapped")
+       }
+    
     private func setupUI() {
         title = "Добавить долг"
         view.addSubview(debtsList)
+        if debt != nil {
+            navigationItem.rightBarButtonItem = rightButton
+        }
     }
     
     private func setupConstrains() {
@@ -55,7 +71,7 @@ final class AddingViewController: UIViewController {
 
 extension AddingViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        DebtCellType.values.count
+        debtCellTypes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

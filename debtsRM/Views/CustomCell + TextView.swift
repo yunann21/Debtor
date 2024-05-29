@@ -19,7 +19,7 @@ class CustomTableViewCellTV: UITableViewCell {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
         textView.isEditable = true
-        textView.isScrollEnabled = false
+        textView.isScrollEnabled = true
         textView.layer.borderColor = UIColor(named: "border")?.cgColor
         textView.layer.cornerRadius = 8
         textView.layer.borderWidth = 1.0
