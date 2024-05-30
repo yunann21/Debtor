@@ -9,12 +9,11 @@ import UIKit
 
 final class AddingViewController: UIViewController {
     
-    let rightButton = UIBarButtonItem(barButtonSystemItem: .compose, target: AddingViewController.self, action: #selector(rightButtonTapped))
-    
+    var allowsEdit = false
     
     var debtCellTypes: [DebtCellType] {
         DebtCellType.values.filter {
-            debt == nil ? true : $0 != .buttonCell
+            debt == nil || allowsEdit ? true : $0 != .buttonCell
         }
     }
     
@@ -42,19 +41,28 @@ final class AddingViewController: UIViewController {
         debtsList.delegate = self
         view.backgroundColor = .systemBackground
         
+        allowsEdit = debt == nil
+        
         setupUI()
         setupConstrains()
     }
     
     @objc func rightButtonTapped() {
-           print("Right button tapped")
+        allowsEdit = true
+        debtsList.reloadData()
+        
        }
+   
     
     private func setupUI() {
         title = "Добавить долг"
         view.addSubview(debtsList)
         if debt != nil {
-            navigationItem.rightBarButtonItem = rightButton
+            navigationItem.rightBarButtonItem = UIBarButtonItem(
+                barButtonSystemItem: .compose,
+                target: self,
+                action: #selector(rightButtonTapped)
+            )
         }
     }
     
@@ -78,8 +86,6 @@ extension AddingViewController: UITableViewDataSource, UITableViewDelegate {
         
         let cellType = DebtCellType.convert(rowValue: indexPath.row)
         let labelText = DebtCellType.labelText(for: indexPath.row)
-        
-        let allowsEdit = debt == nil
         
         
         switch cellType {
@@ -118,7 +124,7 @@ extension AddingViewController: UITableViewDataSource, UITableViewDelegate {
         case .buttonCell:
             let cell = tableView.dequeueReusableCell(withIdentifier: "cellB", for: indexPath)
             if let cellB = cell as? CustomTableViewCellB {
-                cellB.buttonExitOrDelete.setTitle("Отмена", for: .normal)
+                cellB.buttonExitOrDelete.setTitle("Удалить", for: .normal)
                 cellB.buttonSave.setTitle("Сохранить", for: .normal)
                 return cellB
             }

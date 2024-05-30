@@ -13,6 +13,7 @@
 		160838DB2BF38647002F6504 /* CustomCell + Switch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 160838DA2BF38647002F6504 /* CustomCell + Switch.swift */; };
 		164966DF2BFF3FC00075F89B /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 164966DE2BFF3FC00075F89B /* RealmSwift */; };
 		164967072BFF64270075F89B /* DateForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164967062BFF64270075F89B /* DateForm.swift */; };
+		1649670A2C0852800075F89B /* AlertControllerBuilderRM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 164967092C0852800075F89B /* AlertControllerBuilderRM.swift */; };
 		167A559C2BC515E5008251BE /* UIView + Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A559B2BC515E5008251BE /* UIView + Animation.swift */; };
 		167A55D62BD7ADBC008251BE /* InfoDebtor.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 167A55D42BD7ADBC008251BE /* InfoDebtor.xcdatamodeld */; };
 		167A55D82BD7AE68008251BE /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 167A55D72BD7AE68008251BE /* StorageManager.swift */; };
@@ -64,6 +65,7 @@
 		160838D82BF384B0002F6504 /* CustomCell + TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCell + TextView.swift"; sourceTree = "<group>"; };
 		160838DA2BF38647002F6504 /* CustomCell + Switch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCell + Switch.swift"; sourceTree = "<group>"; };
 		164967062BFF64270075F89B /* DateForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateForm.swift; sourceTree = "<group>"; };
+		164967092C0852800075F89B /* AlertControllerBuilderRM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertControllerBuilderRM.swift; sourceTree = "<group>"; };
 		167A559B2BC515E5008251BE /* UIView + Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Animation.swift"; sourceTree = "<group>"; };
 		167A55D52BD7ADBC008251BE /* StorageManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StorageManager.xcdatamodel; sourceTree = "<group>"; };
 		167A55D72BD7AE68008251BE /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
@@ -163,9 +165,18 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		164967082C0852540075F89B /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				164967092C0852800075F89B /* AlertControllerBuilderRM.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
 		167A55DE2BF1FE73008251BE /* debtsRM */ = {
 			isa = PBXGroup;
 			children = (
+				164967082C0852540075F89B /* Factories */,
 				164967052BFF63FC0075F89B /* Extensions */,
 				160838D12BF37F08002F6504 /* ViewControllers */,
 				160838D32BF38107002F6504 /* Views */,
@@ -401,6 +412,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				168009642BF60547006FECF9 /* DebtCellType.swift in Sources */,
+				1649670A2C0852800075F89B /* AlertControllerBuilderRM.swift in Sources */,
 				164967072BFF64270075F89B /* DateForm.swift in Sources */,
 				167A55E02BF1FE73008251BE /* AppDelegate.swift in Sources */,
 				160838D52BF38129002F6504 /* CustomCell + textField.swift in Sources */,
