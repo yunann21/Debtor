@@ -51,7 +51,7 @@ final class AlertControllerBuilderRM {
          - Returns: Ссылка на текущий экземпляр `AlertControllerBuilder` для цепочки вызовов.
          */
     @discardableResult
-    func addAction(title: String, style: UIAlertAction.Style, handler: (() -> Void)? = nil) -> AlertControllerBuilder {
+    func addAction(title: String, style: UIAlertAction.Style, handler: (() -> Void)? = nil) -> AlertControllerBuilderRM {
         let action = UIAlertAction(title: title, style: style) {_ in
                 handler?()
             }
